@@ -31,3 +31,4 @@ const myfunc = function () {
 }
 
 console.log(typeof heros);
+console.log(typeof myfunc);
