@@ -21,3 +21,5 @@
 //=== strict check chks data type 
 console.log("2"=== 2);
 console.log("2"== 2);
+
+
