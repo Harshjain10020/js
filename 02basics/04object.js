@@ -52,13 +52,51 @@
 
 
 /** vid 18 */
-
+//object destruct
 const course = {
     coursename :"js", price:"999", teacher : "harsh"
 }
 //course.teacher
- const {teacher} = course
- console.log(teacher);
+//  const {teacher} = course
+//  console.log(teacher);
+
+const {teacher : instructor} = course
+console.log(instructor);
+
+
+// //json api 
+// {
+// //this json 
+// name: "Harsh",price:"999", teacher : "harsh"
+// }
+
+
+// course.courseInstructor                            // deconstruction of objects same as props in react reduce the complexcity of object
+
+// const {courseInstructor: x} = course
+
+// console.log(courseInstructor);
+// console.log(x);
+ 
+
+// this is the small repesentation of jason (api) it looks like objects but without name and we can convert this to object and get the results
+// {
+//     "name": "hitesh",                             //  write the string type in columns
+//     "coursename": "js in hindi",
+//     "price": "free"
+// }
  
 
 
+// array of obects of jason
+// [
+//     {},
+//     {},
+//     {}
+// ]
+
+const chai =  () => {
+    const username = "harsh"
+    console.log(this.username);
+}
+chai();
