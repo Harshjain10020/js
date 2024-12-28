@@ -84,3 +84,67 @@
 // }
 // // console.log(returnArray(myNewarray));
 // console.log(returnArray([ 200,2003,300]));
+
+
+
+//******************************************Arrow function */
+
+//here "this keyword " current context ko refer karta h
+const user = {
+    username: "harsh",
+    price: 999,
+
+    welcomeMsg: function(){
+        console.log(`${this.username}, welcome to web`);
+        console.log(this);
+        
+    }
+
+}
+
+// user.welcomeMsg()
+// user.username = "Tanu"//context changed here from harsh to tanu
+// user.welcomeMsg()
+// console.log(this); //curr context is empty
+
+//in browser global object is windows but in here it is empty as we didnt declare something 
+// function chai(){
+//     let username = "harsh"
+//     console.log(this);//too much value given here 
+//     console.log(this.username);//undefined
+    
+// }
+// chai()
+
+
+
+// same 
+// const chai = function(){
+//     let username = "harsh"
+//          console.log(this.username);
+// }
+// chai();
+
+
+// //aroow func 
+// const chai = () => {
+//     let username = "harsh"
+//          console.log(this);//empty parathesis 
+// }
+// chai();
+
+
+
+/**basic implemen */ //explicit return req return ststement 
+// const addt= (num1 , num2) => {
+//     return num1+num2;
+// }
+
+//implicit return 
+// const addt= (num1 , num2) =>  num1+num2
+// const addt2= (num1 , num2) =>  (num1+num2)
+const addt2= (num1 , num2) =>  ({username:"harsh"})
+
+console.log(addt2(2,3))
+
+
