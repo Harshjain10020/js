@@ -52,7 +52,7 @@
 //+++++++++++++++++++++++++++++++++++++++++++//
 
 
-//type 1 to declare func , here we can access before also 
+//type 1 to declare func , here we can access before also //mini hoisting
 //addone(5)
 function addone(num){
     return num+1;
