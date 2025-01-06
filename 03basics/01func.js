@@ -59,7 +59,7 @@
 
 
 
-
+/************************************************************************************************************************************************** */
 
 // //object 
 // const user = {
@@ -86,21 +86,21 @@
 // console.log(returnArray([ 200,2003,300]));
 
 
-
+/************************************************************************************************************************************************** */
 //******************************************Arrow function */
 
 //here "this keyword " current context ko refer karta h
-const user = {
-    username: "harsh",
-    price: 999,
+// const user = {
+//     username: "harsh",
+//     price: 999,
 
-    welcomeMsg: function(){
-        console.log(`${this.username}, welcome to web`);
-        console.log(this);
+//     welcomeMsg: function(){
+//         console.log(`${this.username}, welcome to web`);
+//         console.log(this);
         
-    }
+//     }
 
-}
+// }
 
 // user.welcomeMsg()
 // user.username = "Tanu"//context changed here from harsh to tanu
@@ -143,8 +143,34 @@ const user = {
 //implicit return 
 // const addt= (num1 , num2) =>  num1+num2
 // const addt2= (num1 , num2) =>  (num1+num2)
-const addt2= (num1 , num2) =>  ({username:"harsh"})
+// const addt2= (num1 , num2) =>  ({username:"harsh"})
 
-console.log(addt2(2,3))
+// console.log(addt2(2,3))
 
+/************************************************************************************************************************************************** */
+// //Immediately Invoked function Expressions (IIFE)
 
+// (function chai(){
+//     console.log("Bluetooth desvice is Connect :><:");
+    
+// })();// it will run directly without calling (Immediately run ) and it will help in global scope pollution prevention  
+
+// //for 2 IIFE func we need to use ; terminator , becoz they dont know when to stop 
+
+// (function name(){
+//     console.log("Say My Name ");
+//     console.log("heisenberg ");
+// })();
+
+// //now to give argument 
+// (function name1(Firtsname){
+//     console.log("Say My Name ");
+//     console.log(`${Firtsname}`);
+// })('Harsh');
+
+// //u can use arroy func 
+// ((name) =>{
+//     console.log(`Arroy func is ${name}`);
+    
+// } )("BOOGEY WOOGEY")
+/************************************************************************************************************************************************** */
