@@ -1,7 +1,7 @@
 //if
-const isUserLoggedIn = true;
-if(3===2){
-console.log("False");
+// const isUserLoggedIn = true;
+// if(3===2){
+// console.log("False");
 
 }
 // <,>,<=,>=,==.!=
