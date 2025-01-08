@@ -1,0 +1,40 @@
+JavaScript works in three phases during execution:
+
+1. Global Execution Context (GEC)
+The Global Execution Context is created when the JavaScript engine starts running a script.
+The this keyword:
+In a browser, this refers to the global window object.
+In Node.js, this refers to an empty object {}.
+It is the default context in which code is executed unless explicitly inside a function.
+
+
+2. Memory Phase (Creation Phase)
+In this phase, the JavaScript engine scans the code and:
+Allocates memory for variables and functions.
+Variables are initialized to undefined.
+Functions are assigned their entire function definition.
+No actual code execution happens in this phase.
+
+
+3. Execution Phase
+The JavaScript engine executes the code line by line.
+Variables get their actual values.
+Functions are executed when called, creating a new Function Execution Context (FEC).
+The Function Execution Context also has two sub-phases:
+Memory Phase: Reserves memory for variables and initializes them (e.g., variables to undefined and function definitions).
+Execution Phase: Runs the code inside the function.
+
+The return value of the function is sent back to the Global Execution Context.
+Short and Clear Explanation
+
+
+Global Execution Context (GEC): The base environment where the script starts, setting this to window (browser) or {} (Node.js).
+Memory Phase: Allocates memory for variables (undefined) and functions (definitions).
+Execution Phase: Executes code line-by-line. Functions create their own Function Execution Context that works like GEC but limited to the function's scope.
+Each Function Execution Context completes and passes its return value back to the Global Execution Context.
+
+
+
+
+
+
