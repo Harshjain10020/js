@@ -50,4 +50,23 @@
 //     }
 //    console.log(`Value of i is ${i}`);
 // }
+const myObject = {
+    js: "javascript",
+    cpp : "c++",
+}
+for( const key in myObject){
+    // console.log(key);
+    console.log(`${key} shortcut is for ${myObject[key]}`);
+    
+    
+}
 
+
+//array iteration using for in 
+const arr = ['a','a','b','f']
+for (const key in arr) {
+   console.log(key);// placevalue
+   console.log(arr[key]);
+   
+   
+}

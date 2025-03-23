@@ -1,27 +1,26 @@
 // // // // // console.log(1);
 // // // // function saymyname(){
 // // // //     console.log("Harsh");
-    
+
 // // // // }
-// // // // // saymyname;//reference 
-// // // // saymyname(); //exceute 
+// // // // // saymyname;//reference
+// // // // saymyname(); //exceute
 
 // // // function add(num1, num2){
-// // //     console.log(num1 + num2);//Nan 
-    
+// // //     console.log(num1 + num2);//Nan
+
 // // // }
-// // // add();//Nan no agrument 
+// // // add();//Nan no agrument
 // // // add(3,7)
-// // // add(3,"7") // conevrt str 
-// // // add(3,"a") // conevrt str 
-// // // add(3,null) // conevrt str 
+// // // add(3,"7") // conevrt str
+// // // add(3,"a") // conevrt str
+// // // add(3,null) // conevrt str
 // // // function add(num1, num2){
 // // // //    const res = console.log(num1 + num2);
 // // // //     return res;
 // // // return console.log(num1 + num2);
 // // // }
 // // // add(2,2)
-
 
 // // function loginUserMessage(username = "john doe // default value if undefined it auto assign"){
 // //         // if(!username){
@@ -37,31 +36,25 @@
 // //     // console.log(loginUserMessage("yakuxa"))
 // //     // console.log(loginUserMessage("the game  "))
 
-// //shopping cartt , user just add with no limit 
+// //shopping cartt , user just add with no limit
 
 // // function calCartPrice(...num1){
 // //     return num1
 // // }
 // // console.log(calCartPrice(200, 400, "HArhs" ));
-// // //rest operator ... or spread operator it will add more if user adds more 
-
+// // //rest operator ... or spread operator it will add more if user adds more
 
 // // function calCartPrice(var1, var2, ...num1){
 // //     //here var1 = 200 , var2 = 400
 // //     console.log(var1);
-    
+
 // //     return num1
 // // }
 // // console.log(calCartPrice(200, 400, "HArhs" ));
 
-
-
-
-
-
 /************************************************************************************************************************************************** */
 
-// //object 
+// //object
 // const user = {
 //     username : "Harhs",
 //     price: " 22020202020202020202020202020"
@@ -69,7 +62,7 @@
 
 // function handleObject(anyObject){
 //     console.log(`Username is ${anyObject.username} and price is ${anyObject.price}`);
-    
+
 // }
 
 // // handleObject(user)
@@ -85,7 +78,6 @@
 // // console.log(returnArray(myNewarray));
 // console.log(returnArray([ 200,2003,300]));
 
-
 /************************************************************************************************************************************************** */
 //******************************************Arrow function */
 
@@ -97,7 +89,7 @@
 //     welcomeMsg: function(){
 //         console.log(`${this.username}, welcome to web`);
 //         console.log(this);
-        
+
 //     }
 
 // }
@@ -107,40 +99,35 @@
 // user.welcomeMsg()
 // console.log(this); //curr context is empty
 
-//in browser global object is windows but in here it is empty as we didnt declare something 
+//in browser global object is windows but in here it is empty as we didnt declare something
 // function chai(){
 //     let username = "harsh"
-//     console.log(this);//too much value given here 
+//     console.log(this);//too much value given here
 //     console.log(this.username);//undefined
-    
+
 // }
 // chai()
 
-
-
-// same 
+// same
 // const chai = function(){
 //     let username = "harsh"
 //          console.log(this.username);
 // }
 // chai();
 
-
-// //aroow func 
+// //aroow func
 // const chai = () => {
 //     let username = "harsh"
-//          console.log(this);//empty parathesis 
+//          console.log(this);//empty parathesis
 // }
 // chai();
 
-
-
-/**basic implemen */ //explicit return req return ststement 
+/**basic implemen */ //explicit return req return ststement
 // const addt= (num1 , num2) => {
 //     return num1+num2;
 // }
 
-//implicit return 
+//implicit return
 // const addt= (num1 , num2) =>  num1+num2
 // const addt2= (num1 , num2) =>  (num1+num2)
 // const addt2= (num1 , num2) =>  ({username:"harsh"})
@@ -149,28 +136,28 @@
 
 /************************************************************************************************************************************************** */
 // //Immediately Invoked function Expressions (IIFE)
-
+//()()
 // (function chai(){
 //     console.log("Bluetooth desvice is Connect :><:");
-    
-// })();// it will run directly without calling (Immediately run ) and it will help in global scope pollution prevention  
 
-// //for 2 IIFE func we need to use ; terminator , becoz they dont know when to stop 
+// })();// it will run directly without calling (Immediately run ) and it will help in global scope pollution prevention
+
+// //for 2 IIFE func we need to use ; terminator , becoz they dont know when to stop
 
 // (function name(){
 //     console.log("Say My Name ");
 //     console.log("heisenberg ");
 // })();
 
-// //now to give argument 
+// //now to give argument
 // (function name1(Firtsname){
 //     console.log("Say My Name ");
 //     console.log(`${Firtsname}`);
 // })('Harsh');
 
-// //u can use arroy func 
+// //u can use arroy func
 // ((name) =>{
 //     console.log(`Arroy func is ${name}`);
-    
+
 // } )("BOOGEY WOOGEY")
 /************************************************************************************************************************************************** */

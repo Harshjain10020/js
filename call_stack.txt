@@ -36,5 +36,148 @@ Each Function Execution Context completes and passes its return value back to th
 
 
 
+JavaScript Execution & Call Stack
+1. How JavaScript Executes Code
+JavaScript is single-threaded, meaning it executes one operation at a time in a synchronous manner. It uses the Execution Context and Call Stack to manage function calls.
+
+2. JavaScript Execution Context
+When JavaScript runs code, it creates an Execution Context that consists of three phases:
+
+1️⃣ Creation Phase (Memory Allocation)
+Reserves memory for variables and functions.
+
+Variables are initialized as undefined.
+
+Functions are stored in memory.
+
+2️⃣ Execution Phase
+Executes the code line by line.
+
+Assigns values to variables.
+
+Calls functions.
+
+3️⃣ Garbage Collection (Optional)
+Removes unused memory.
+
+3. Call Stack – The Heart of JavaScript Execution
+The Call Stack is a data structure that manages function execution in JavaScript using LIFO (Last In, First Out).
+
+📌 Key Points:
+
+When a function is called, it is pushed onto the stack.
+
+When a function finishes, it is popped off the stack.
+
+JavaScript runs the function at the top of the stack first.
+
+Example:
+javascript
+Copy
+Edit
+function first() {
+    console.log("First function");
+    second();
+}
+
+function second() {
+    console.log("Second function");
+    third();
+}
+
+function third() {
+    console.log("Third function");
+}
+
+first();
+Step-by-Step Call Stack Execution:
+Stack Operation	Call Stack
+first() is called	first()
+first() calls second()	first() → second()
+second() calls third()	first() → second() → third()
+third() finishes (popped)	first() → second()
+second() finishes (popped)	first()
+first() finishes (popped)	(empty)
+🟢 Output:
+
+sql
+Copy
+Edit
+First function
+Second function
+Third function
+4. What Happens If Call Stack Overflows?
+If functions keep calling each other infinitely, the stack overflows, leading to a Stack Overflow Error.
+
+javascript
+Copy
+Edit
+function infiniteLoop() {
+    infiniteLoop(); // No exit condition!
+}
+
+infiniteLoop();  // ❌ Stack Overflow Error
+💡 Fix: Always ensure functions have an exit condition.
+
+5. Call Stack & Asynchronous JavaScript
+JavaScript can handle asynchronous tasks (like API calls, setTimeout) using:
+
+Call Stack (synchronous tasks)
+
+Web APIs (handles async tasks like setTimeout)
+
+Callback Queue (stores async callbacks)
+
+Event Loop (moves callbacks from queue to stack)
+
+🔹 Example with setTimeout (Async Code Execution)
+
+javascript
+Copy
+Edit
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Timeout callback");
+}, 2000);
+
+console.log("End");
+🔸 Execution Order:
+
+pgsql
+Copy
+Edit
+Start
+End
+Timeout callback (after 2 seconds)
+💡 Why?
+
+Synchronous tasks (console.log("Start"), console.log("End")) run first.
+
+setTimeout() is sent to Web API.
+
+After 2s, the callback moves to the Callback Queue.
+
+Event Loop moves it to the Call Stack when it is empty.
+
+🔹 Summary
+JavaScript runs in an Execution Context with a Call Stack.
+
+The Call Stack follows LIFO (Last In, First Out).
+
+Synchronous tasks execute first; async tasks use Web APIs & Callback Queue.
+
+A Stack Overflow occurs if functions call each other infinitely.
+
+The Event Loop ensures smooth async execution.
+
+Let me know if you need more clarity! 🚀😊
+
+
+
+
+
+
+
 
 
