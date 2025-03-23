@@ -61,15 +61,15 @@ user2.email = "aharsh@gash.csda"
 console.log(user1);
 console.log(user2);
 
-// let nums = {
-// name: "dushyant",
-// height: "183cm",
-// networth: 348764123473816,
-// }
-// let newnums = nums;
+let nums = {
+name: "dushyant",
+height: "183cm",
+networth: 348764123473816,
+}
+let newnums = nums;
 
-// newnums.height = "191cm"
-// newnums.networht = 574578326587245;
+newnums.height = "191cm"
+newnums.networht = 574578326587245;
 
-// console.table([nums.name , nums.height , nums.networht])                   // this is non primitive data type and heap is used (reference changes in orginal data)
-// console.table([newnums.name , newnums.height , newnums.networht])
+console.table([nums.name , nums.height , nums.networht])                   // this is non primitive data type and heap is used (reference changes in orginal data)
+ console.table([newnums.name , newnums.height , newnums.networht])

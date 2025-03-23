@@ -5,6 +5,8 @@ const myarray = [0,1,1,2,3,4,]
 //array cannot be using arbitary string , only access thr u arr[i] , not arr["a"]
 //0 indexing 
 // change in copied array will have changes in mainn array 
+
+
 const myHero = ["daredevil", 'batman']
 
 const myarr3 =  new Array(1,2,3,4)
@@ -16,7 +18,7 @@ const myarr3 =  new Array(1,2,3,4)
 // myarray.pop()
 // myarray.unshift(9)
 // myarray.shift()
-
+// console.log(myarray)
 // console.log(myarray.includes(9));//boolean typ 
 // console.log(myarray.indexOf(9));//index typ 
 // const newArr = myarray.join()
@@ -87,9 +89,9 @@ console.log(allHeros);
 
 
 
-// console.log(Array.isArray("Hitesh"))                 // return true or false
-// console.log(Array.from("Hitesh"))                   //  convert string into char array
-// console.log(Array.from({name: "hitesh"}))          // interesting  provide the null
+console.log(Array.isArray("Hitesh"))                 // return true or false
+console.log(Array.from("Hitesh"))                   //  convert string into char array
+console.log(Array.from({name: "hitesh"}))          // interesting  provide the null
 
 // let score1 = 100
 // let score2 = 200

@@ -1,6 +1,6 @@
 //Dates 
 let myDate = new Date();
-// console.log(myDate);//2024-12-06T18:46:28.041Z
+//console.log(myDate);//2024-12-06T18:46:28.041Z
 // console.log(myDate.toDateString());//Fri Dec 06 2024
 // console.log(myDate.toISOString());//2024-12-06T18:46:28.041Z
 // console.log(myDate.toLocaleDateString());//2/6/2024

@@ -18,8 +18,8 @@
 // console.log(undefined >= 0);
 //avoid above conversion
 
-//=== strict check chks data type 
-console.log("2"=== 2);
-console.log("2"== 2);
+
+console.log("2"=== 2);//=== strict check chks data type and val 
+console.log("2"== 2);// chk for only val
 
 
