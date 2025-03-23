@@ -15,6 +15,7 @@
 //     "full name": "Harsh Jain",
 // }
 
+
 // // console.log(jsUser.age);
 // // console.log(jsUser[mySym]);//  declare the symbole in saqure brakect or refer symbole use []
 // // // console.log(typeof jsUser.mySym);
