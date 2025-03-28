@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Vid 5</title>
+    
+</head>
+<body style="background-color: black;
+            color: white;">
+    <ul class="lang">
+        <li>js</li>
+    </ul>
+</body>
+<script>
+    function addLang(langname){
+       const li =  document.createElement('li');
+        li.innerHTML = `${langname}`;
+        document.querySelector('.lang').appendChild(li);
+    }
+    addLang('python');
+    addLang('java');
+    addLang('c++');
+//optimized way 
+    function addlang(langname){
+        const li = document.createElement('li');
+        const text = document.createTextNode(langname);
+        li.appendChild(text);
+        document.querySelector('.lang').appendChild(li);
+        
+    }
+    addlang('ruby');
+    addlang('php');
+
+    //edit 
+    const secndLang = document.querySelector("li:nth-child(2)")
+    console.log(secndLang);
+    
+    //secndLang.innerHTML = "Mpjo"
+
+
+    //2nd method for edit 
+    const newLi = document.createElement('li')
+    newLi.textContent = "sql" // also can use innerHTML instead textcontent
+    secndLang.replaceWith(newLi)
+
+    //rpelace js with typescript 
+    const Slang = document.querySelector('li:first-child')
+    Slang.outerHTML = '<li>Typescript</li>'
+
+
+    //remove 
+
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove()
+
+</script>
+</html>
