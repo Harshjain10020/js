@@ -1,0 +1,35 @@
+html{
+    margin: 0;
+}
+
+span{
+    display: block;
+}
+
+.canvas{
+    margin: 100px auto 100px;
+    width: 80%;
+    text-align: center;
+}
+
+.button{
+    width: 100px auto 100px;
+    height: 80%;
+    border: solid black 2px;
+    display: inline-block;
+}
+#grey{
+    background-color: grey;
+}
+#red{
+    background-color: red;
+}
+#blue{
+    background-color: blue;
+    color: wheat;
+}
+
+#yellow{
+    background-color: yellow;
+}
+
