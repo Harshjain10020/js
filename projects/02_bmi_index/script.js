@@ -20,3 +20,6 @@ form.addEventListener('submit',  function(e){
   }
 
 })
+
+
+// add if else condotion to show fit overweigtht , weak 
