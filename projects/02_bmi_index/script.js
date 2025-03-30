@@ -17,6 +17,7 @@ form.addEventListener('submit',  function(e){
     const bmi = (weight/ ((height**2)/10000)).toFixed(2)
    //show result 
    // result.innerHTML = `<span>${bmi}</span>`
+   // add if else condotion to show fit overweigtht , weak 
    if(bmi<18.6 ){
     result.innerHTML =  `<span>Underweight : ${bmi}</span>` ;
   }else 
@@ -29,4 +30,3 @@ form.addEventListener('submit',  function(e){
 })
 
 
-// add if else condotion to show fit overweigtht , weak 
