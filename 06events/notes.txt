@@ -1,0 +1,16 @@
+#events in javascript
+Dont use onclick, onsubmit, onload etc. instead use addEventListener() method because they are deprecated.
+
+// addEventListener() method is used to attach an event handler to the specified element    , they abilty of propogation of events in the DOM tree, and the ability to remove event handlers.
+// It allows you to listen for events on elements and execute a function when the event occurs.
+// Syntax: element.addEventListener(event, function, useCapture);
+
+// event: The name of the event (without "on") to listen for (e.g., "click", "mouseover", "keydown").
+
+
+document.getElementById('owl').addEventListener('click', ()=> {
+        alert('Owl image clicked!');
+    }, false);
+
+    here false is used to specify that the event should not be captured during the capturing phase.
+// The third parameter (useCapture) is optional and can be set to true or false. If set to true, the event will be captured during the capturing phase. If set to false (or omitted), the event will be captured during the bubbling phase.
