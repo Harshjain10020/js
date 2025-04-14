@@ -1,0 +1,27 @@
+async code 
+js is synchronous
+js is single-threaded
+
+exceution context 
+call stack
+execution context is created when function is called
+execution context is destroyed when function returns
+ 
+ exceute one line of code at a time
+call stack is a data structure that stores the execution context of the functions
+call stack is a LIFO data structure
+when a function is called, a new execution context is created and pushed onto the call stack
+when a function returns, its execution context is popped off the call stack
+when the call stack is empty, the program is finished executing
+the call stack is a data structure that stores the execution context of the functions
+
+each operation is executed in the order it is called
+
+blocking code and non blocking code
+blocking code is code that stops the execution of the program until it is finished executing (for example, a for loop)Sync code is code that stops the execution of the program until it is finished executing (for example, a for loop)
+
+
+non blocking code is code that does not stop the execution of the program until it is finished executing
+(for example, a setTimeout function) async code is code that does not stop the execution of the program until it is finished executing (for example, a setTimeout function)
+
+
