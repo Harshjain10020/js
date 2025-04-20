@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Fetcher</title>
+    <style>
+         body {
+            background-color: antiquewhite;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #output {
+            margin-top: 20px;
+        }
+        img {
+            width: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Github Profile Fetcher</h2>
+    <input type="text" id = "apiurl" placeholder="Enter Github API URL"/>
+
+    <button onclick="fetchinfo()">Get Profile</button>
+    <div id="output"></div>
+</body>
+<script>
+    function fetchinfo(){
+        const url = document.getElementById('apiurl').value;
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4){
+                const outputdiv = document.getElementById('output');
+
+                if(xhr.status >=200 && xhr.status < 300){
+                    const data = JSON.parse(this.responseText);
+
+                    outputdiv.innerHTML = `<img src = "${data.avatar_url}" alt = "profile pic">
+                    
+                    <p>Followers : ${data.followers}</p>
+                    <p>Followings : ${data.following}</p>
+                    <p></p>`;
+                }else {
+                        outputDiv.innerHTML = `<p style="color:red;">Error: Could not fetch data (Status ${xhr.status})</p>`;
+                    }
+            }
+        }
+        xhr.send();
+
+    }
+</script>
+</html>

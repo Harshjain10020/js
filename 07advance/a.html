@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Fetcher</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #output {
+            margin-top: 20px;
+        }
+        img {
+            width: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>GitHub Profile Info</h2>
+    <input type="text" id="apiUrl" placeholder="Enter GitHub API URL" size="50" />
+    <button onclick="fetchGitHubData()">Get Profile</button>
+
+    <div id="output"></div>
+
+    <script>
+        function fetchGitHubData() {
+            const url = document.getElementById('apiUrl').value;
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', url);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    const outputDiv = document.getElementById('output');
+
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        const data = JSON.parse(this.responseText);
+                        outputDiv.innerHTML = `
+                            <h3>${data.name} (@${data.login})</h3>
+                            <img src="${data.avatar_url}" alt="Profile Picture" />
+                            <p><strong>Followers:</strong> ${data.followers}</p>
+                            <p><strong>Following:</strong> ${data.following}</p>
+                            <p><strong>Public Repos:</strong> ${data.public_repos}</p>
+                        `;
+                    } else {
+                        outputDiv.innerHTML = `<p style="color:red;">Error: Could not fetch data (Status ${xhr.status})</p>`;
+                    }
+                }
+            };
+
+            xhr.send();
+        }
+    </script>
+
+</body>
+</html>
