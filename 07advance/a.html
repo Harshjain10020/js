@@ -3,58 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Profile Fetcher</title>
+    <title>GitHub Profile Viewer</title>
     <style>
         body {
-            background-color: antiquewhite;
-            font-family: Arial, sans-serif;
-            padding: 20px;
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+            color: #fff;
         }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .input {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1e8449;
+        }
+
         #output {
-            margin-top: 20px;
+            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
-        img {
-            width: 100px;
+
+        #output img {
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #fff;
+        }
+
+        #output p, #output a {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #f0f0f0;
+        }
+
+        #output a {
+            color: #00ffff;
+            text-decoration: none;
+        }
+
+        #output a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-
-    <h2>GitHub Profile Info</h2>
-    <input type="text" id="apiUrl" placeholder="Enter GitHub API URL" size="50" />
-    <button onclick="fetchGitHubData()">Get Profile</button>
-
+    <h2>GitHub Profile Checker</h2>
+    <div class="input">
+        <input type="text" id="apiurl" placeholder="Enter GitHub API URL (e.g. https://api.github.com/users/username)">
+    </div>
+    <button onclick="fetchprofile()">GET INFO</button>
     <div id="output"></div>
 
     <script>
-        function fetchGitHubData() {
-            const url = document.getElementById('apiUrl').value;
+        function fetchprofile(){
+            const url = document.getElementById('apiurl').value;
             const xhr = new XMLHttpRequest();
             xhr.open('GET', url);
 
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState === 4){
                     const outputDiv = document.getElementById('output');
 
-                    if (xhr.status >= 200 && xhr.status < 300) {
-                        const data = JSON.parse(this.responseText);
-                        outputDiv.innerHTML = `
-                            <h3>${data.name} (@${data.login})</h3>
-                            <img src="${data.avatar_url}" alt="Profile Picture" />
-                            <p><strong>Followers:</strong> ${data.followers}</p>
-                            <p><strong>Following:</strong> ${data.following}</p>
-                            <p><strong>Public Repos:</strong> ${data.public_repos}</p>
-                        `;
-                    } else {
-                        outputDiv.innerHTML = `<p style="color:red;">Error: Could not fetch data (Status ${xhr.status})</p>`;
-                    }
+                    const data = JSON.parse(this.responseText);
+                    outputDiv.innerHTML = `
+                        <img src="${data.avatar_url}" alt="Profile Picture">
+                        <p><strong>Username:</strong> ${data.login}</p>
+                        <p><strong>Public Repos:</strong> ${data.public_repos}</p>
+                        <p><strong>Account Created:</strong> ${new Date(data.created_at).toDateString()}</p>
+                        <p><strong>GitHub URL:</strong> <a href="${data.html_url}" target="_blank">${data.html_url}</a></p>
+                    `;
                 }
-            };
-
+            }
             xhr.send();
         }
     </script>
-
 </body>
 </html>
